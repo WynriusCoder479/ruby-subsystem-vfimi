@@ -39,7 +39,9 @@ const HomePage: FC<HomePageProps> = ({ searchParams: { code, product } }) => {
 			return { uid }
 		},
 		onSuccess: ({ uid }) => {
-			router.push(`/credit-card/common-info?code=${uid}&product=${product}`)
+			router.push(
+				`/credit-card/common-info?code=${uid}&product=${product ?? 'vpbankcc'}`
+			)
 		}
 	})
 
